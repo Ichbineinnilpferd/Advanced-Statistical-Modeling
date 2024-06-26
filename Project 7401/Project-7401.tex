@@ -1,0 +1,1160 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Project 7401},
+  pdfauthor={Moe Kyaw Thu},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Project 7401}
+\author{Moe Kyaw Thu}
+\date{2024-03-12}
+
+\begin{document}
+\maketitle
+
+\[
+\text{Appendix: }
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Reading and cleaning data set}
+\CommentTok{\#Description: }
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read.delim}\NormalTok{(}\StringTok{"scisci\_gender.tsv"}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{5000}\NormalTok{) }\CommentTok{\#Sample size of 5000 out of 130 million rows for illustrative purposes}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{head}\NormalTok{(df))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   AuthorID            Author_Name H.index Productivity Average_C10
+## 1      584 Gözde Özdikmenli-Demir       3            5          NA
+## 2      859             Gy. Tolmár       1            3   0.6666667
+## 3      978         Ximena Faúndez       4           10   8.6666667
+## 4     1139         Jennifer Putzi       1            4   1.7500000
+## 5     1476              勲矢 手島       0            1   0.0000000
+## 6     1799       Hossein Gholaman       2            2 139.5000000
+##   Average_LogC10 Inference_Sources Inference_Counts P.gf.
+## 1             NA                16             1003 0.981
+## 2      0.3662041                NA               NA    NA
+## 3      2.1295205                20            30709 0.987
+## 4      0.6597643                33          1782283 0.992
+## 5      0.0000000                10              333 0.252
+## 6      4.9082563                22             1021 0.000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{tail}\NormalTok{(df))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      AuthorID              Author_Name H.index Productivity Average_C10
+## 4995  3070677 Lilach Friedlander-Shani       4            6    7.000000
+## 4996  3071114       Edward Rustamzadeh       6           10   25.200000
+## 4997  3072390       Rachel Davis-Taber      11           16   31.200000
+## 4998  3073126           Anton Jezernik       5           11    8.454545
+## 4999  3073811     Hervé This-Benckhard       0            1    0.000000
+## 5000  3074650   Walter Schlüter‐Wigger       1            1   45.000000
+##      Average_LogC10 Inference_Sources Inference_Counts P.gf.
+## 4995       2.079442                 9              116 1.000
+## 4996       2.618833                32          1445725 0.001
+## 4997       2.983715                31           746006 0.991
+## 4998       1.386272                29           138859 0.001
+## 4999       0.000000                20           146550 0.000
+## 5000       3.828641                33           747150 0.001
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Cleaning data set}
+\CommentTok{\#Omitting NAs}
+\NormalTok{df.clean }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(df)}
+\CommentTok{\#Total number of rows without NAs: 3991 rows}
+
+\CommentTok{\#Sub setting to clean out unnecessary columns for better analysis}
+\NormalTok{df.clean.sub }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(}\AttributeTok{select=}\FunctionTok{c}\NormalTok{(}\StringTok{"H.index"}\NormalTok{, }\StringTok{"Productivity"}\NormalTok{, }\StringTok{"Average\_C10"}\NormalTok{, }\StringTok{"Average\_LogC10"}\NormalTok{, }\StringTok{"Inference\_Sources"}\NormalTok{, }\StringTok{"Inference\_Counts"}\NormalTok{, }\StringTok{"P.gf."}\NormalTok{), df.clean)}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{head}\NormalTok{(df.clean.sub))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   H.index Productivity Average_C10 Average_LogC10 Inference_Sources
+## 3       4           10    8.666667      2.1295205                20
+## 4       1            4    1.750000      0.6597643                33
+## 5       0            1    0.000000      0.0000000                10
+## 6       2            2  139.500000      4.9082563                22
+## 8       3            3    3.000000      1.3862944                17
+## 9       1            2   17.000000      2.8903718                31
+##   Inference_Counts P.gf.
+## 3            30709 0.987
+## 4          1782283 0.992
+## 5              333 0.252
+## 6             1021 0.000
+## 8             1218 0.159
+## 9          1291468 0.992
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Rounding up numbers}
+\NormalTok{df.clean.sub}\SpecialCharTok{$}\NormalTok{Average\_C10 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(df.clean.sub}\SpecialCharTok{$}\NormalTok{Average\_C10, }\DecValTok{2}\NormalTok{)}
+\NormalTok{df.clean.sub}\SpecialCharTok{$}\NormalTok{Average\_LogC10 }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(df.clean.sub}\SpecialCharTok{$}\NormalTok{Average\_LogC10, }\DecValTok{2}\NormalTok{)}
+\NormalTok{df.clean.sub}\SpecialCharTok{$}\NormalTok{P.gf. }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(df.clean.sub}\SpecialCharTok{$}\NormalTok{P.gf., }\DecValTok{2}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{head}\NormalTok{(df.clean.sub))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   H.index Productivity Average_C10 Average_LogC10 Inference_Sources
+## 3       4           10        8.67           2.13                20
+## 4       1            4        1.75           0.66                33
+## 5       0            1        0.00           0.00                10
+## 6       2            2      139.50           4.91                22
+## 8       3            3        3.00           1.39                17
+## 9       1            2       17.00           2.89                31
+##   Inference_Counts P.gf.
+## 3            30709  0.99
+## 4          1782283  0.99
+## 5              333  0.25
+## 6             1021  0.00
+## 8             1218  0.16
+## 9          1291468  0.99
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Data Exploration and Visualization}
+\NormalTok{visnorm }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(dataframe) \{}
+  \FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FunctionTok{ncol}\NormalTok{(dataframe) }\SpecialCharTok{\%/\%} \DecValTok{2} \SpecialCharTok{+} \DecValTok{1}\NormalTok{))}
+  \ControlFlowTok{for}\NormalTok{ (col }\ControlFlowTok{in} \FunctionTok{names}\NormalTok{(dataframe)) \{}
+    \FunctionTok{hist}\NormalTok{(dataframe[[col]], }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{"Histogram of"}\NormalTok{, col), }\AttributeTok{xlab=}\NormalTok{col, }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{, }\AttributeTok{border=}\StringTok{"red"}\NormalTok{)}
+    \FunctionTok{qqnorm}\NormalTok{(dataframe[[col]], }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{"QQ Plot of"}\NormalTok{, col))}
+    \FunctionTok{qqline}\NormalTok{(dataframe[[col]])}
+\NormalTok{  \}}
+  \FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{)) }\CommentTok{\# Reset the plotting layout}
+\NormalTok{\}}
+\CommentTok{\#Visualizing Normality}
+\FunctionTok{visnorm}\NormalTok{(df.clean.sub)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-3-1.pdf}
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-3-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: Based on the visualization, the data, after omitting NAs, are not distributed normally. In fact, almost all of the columns are skewed in either of the directions. }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Basic Linear Regression Analysis}
+\NormalTok{lm.h.index }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\FunctionTok{summary}\NormalTok{(lm.h.index)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ ., data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -42.847  -1.494   0.100   0.811  51.399 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       -1.156e+00  2.371e-01  -4.878 1.11e-06 ***
+## Productivity       1.710e-01  1.385e-03 123.427  < 2e-16 ***
+## Average_C10        1.136e-02  1.441e-03   7.887 3.96e-15 ***
+## Average_LogC10     1.693e+00  6.341e-02  26.697  < 2e-16 ***
+## Inference_Sources  2.229e-02  9.165e-03   2.432   0.0151 *  
+## Inference_Counts   5.609e-08  7.466e-08   0.751   0.4525    
+## P.gf.             -1.697e-01  1.626e-01  -1.044   0.2966    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 4.454 on 3984 degrees of freedom
+## Multiple R-squared:  0.8328, Adjusted R-squared:  0.8326 
+## F-statistic:  3308 on 6 and 3984 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: The results show that variables Productivity, Average\_C10, Average\_LogC10, and Inference\_Sources are statistically significant predictors of H.index, while Inference\_Counts and P.gf. are not statistically significant. }
+
+\CommentTok{\#Stargazer Table}
+\CommentTok{\# Generate stargazer output}
+\NormalTok{stargazer\_output }\OtherTok{\textless{}{-}} \FunctionTok{capture.output}\NormalTok{(}\FunctionTok{stargazer}\NormalTok{(lm.h.index, }\AttributeTok{type =} \StringTok{"text"}\NormalTok{))}
+\CommentTok{\# Save output to a text file}
+\FunctionTok{writeLines}\NormalTok{(stargazer\_output, }\StringTok{"stargazer\_output.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Additional regression procedures}
+\CommentTok{\#Correlation between predictors}
+\NormalTok{corr }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{cor}\NormalTok{(df.clean.sub[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]),}\DecValTok{2}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(corr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                   Productivity Average_C10 Average_LogC10 Inference_Sources
+## Productivity              1.00        0.15           0.21              0.06
+## Average_C10               0.15        1.00           0.53              0.07
+## Average_LogC10            0.21        0.53           1.00              0.13
+## Inference_Sources         0.06        0.07           0.13              1.00
+## Inference_Counts          0.00        0.07           0.11              0.44
+## P.gf.                    -0.11        0.01           0.04             -0.02
+##                   Inference_Counts P.gf.
+## Productivity                  0.00 -0.11
+## Average_C10                   0.07  0.01
+## Average_LogC10                0.11  0.04
+## Inference_Sources             0.44 -0.02
+## Inference_Counts              1.00 -0.15
+## P.gf.                        -0.15  1.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{corrplot}\NormalTok{(corr, }\AttributeTok{method =} \StringTok{"circle"}\NormalTok{, }\AttributeTok{type =} \StringTok{"upper"}\NormalTok{, }\AttributeTok{order =} \StringTok{"hclust"}\NormalTok{, }\AttributeTok{tl.col =} \StringTok{"black"}\NormalTok{, }\AttributeTok{tl.srt =} \DecValTok{45}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: Of all the correlations, Productivity and P.gf. are weakly correlated to each other with {-}11 percent. In constrast inference counts and inference sources as well as Average C10 and Average\_LogC10 are moderate to strongly correlated with each other.}
+
+\CommentTok{\#Relationship between productivity and female gender probability}
+\NormalTok{lm.prod.h.index }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ P.gf. }\SpecialCharTok{+}\NormalTok{ Productivity, }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\NormalTok{lm.prod.h.index}\FloatTok{.2} \OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Productivity, }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\NormalTok{lm.prod.h.index}\FloatTok{.3} \OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ P.gf., }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\FunctionTok{summary}\NormalTok{(lm.prod.h.index)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ P.gf. + Productivity, data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -46.874  -2.411  -1.136   1.230  51.579 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  2.228522   0.118923  18.739   <2e-16 ***
+## P.gf.        0.180216   0.186136   0.968    0.333    
+## Productivity 0.182253   0.001572 115.948   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 5.185 on 3988 degrees of freedom
+## Multiple R-squared:  0.7731, Adjusted R-squared:  0.773 
+## F-statistic:  6795 on 2 and 3988 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(lm.prod.h.index}\FloatTok{.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ Productivity, data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -46.836  -2.486  -1.041   1.240  51.759 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  2.303594   0.090169   25.55   <2e-16 ***
+## Productivity 0.182082   0.001562  116.58   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 5.185 on 3989 degrees of freedom
+## Multiple R-squared:  0.7731, Adjusted R-squared:  0.773 
+## F-statistic: 1.359e+04 on 1 and 3989 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(lm.prod.h.index}\FloatTok{.3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ P.gf., data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+##  -7.538  -5.939  -3.910   1.462 130.682 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   7.5381     0.2294   32.85  < 2e-16 ***
+## P.gf.        -2.2426     0.3866   -5.80 7.14e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 10.84 on 3989 degrees of freedom
+## Multiple R-squared:  0.008363,   Adjusted R-squared:  0.008114 
+## F-statistic: 33.64 on 1 and 3989 DF,  p-value: 7.145e-09
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Generate the stargazer output for the three models}
+\FunctionTok{stargazer}\NormalTok{(lm.prod.h.index, lm.prod.h.index}\FloatTok{.2}\NormalTok{, lm.prod.h.index}\FloatTok{.3}\NormalTok{,}
+          \AttributeTok{type =} \StringTok{"text"}\NormalTok{, }\AttributeTok{out =} \StringTok{"lm\_prod\_h\_index\_summaries.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## =====================================================================================================
+##                                                    Dependent variable:                               
+##                     ---------------------------------------------------------------------------------
+##                                                          H.index                                     
+##                                 (1)                         (2)                        (3)           
+## -----------------------------------------------------------------------------------------------------
+## P.gf.                          0.180                                                -2.243***        
+##                               (0.186)                                                (0.387)         
+##                                                                                                      
+## Productivity                 0.182***                     0.182***                                   
+##                               (0.002)                     (0.002)                                    
+##                                                                                                      
+## Constant                     2.229***                     2.304***                   7.538***        
+##                               (0.119)                     (0.090)                    (0.229)         
+##                                                                                                      
+## -----------------------------------------------------------------------------------------------------
+## Observations                   3,991                       3,991                      3,991          
+## R2                             0.773                       0.773                      0.008          
+## Adjusted R2                    0.773                       0.773                      0.008          
+## Residual Std. Error      5.185 (df = 3988)           5.185 (df = 3989)          10.840 (df = 3989)   
+## F Statistic         6,795.469*** (df = 2; 3988) 13,590.210*** (df = 1; 3989) 33.640*** (df = 1; 3989)
+## =====================================================================================================
+## Note:                                                                     *p<0.1; **p<0.05; ***p<0.01
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: These three models are tested to evaluate the individual relationships between H.index and that of P.gf. and Productivity. It turns out that due to the negative correlation between Productivity and P.gf., in the model "lm.prod.h.index", P.gf. does not have any significant. However, tested individually with H.index, both variables are statistically significant. However, it should be noted that of all the three models, the last model with H.index and P.gf. only explain very small amount due to low R{-}squared.}
+
+\CommentTok{\#Relationship between H index, average C\_10 and infer}
+\NormalTok{lm.h.index.c10.infer }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Average\_C10 }\SpecialCharTok{+}\NormalTok{ Average\_LogC10 }\SpecialCharTok{+}\NormalTok{ Inference\_Sources }\SpecialCharTok{+}\NormalTok{ Inference\_Counts, }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\FunctionTok{summary}\NormalTok{(lm.h.index.c10.infer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ Average_C10 + Average_LogC10 + Inference_Sources + 
+##     Inference_Counts, data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -46.248  -4.281  -1.466   0.609 120.180 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       -4.099e-01  5.103e-01  -0.803 0.421901    
+## Average_C10        1.955e-02  3.185e-03   6.139 9.13e-10 ***
+## Average_LogC10     2.862e+00  1.384e-01  20.683  < 2e-16 ***
+## Inference_Sources  7.221e-02  2.023e-02   3.569 0.000362 ***
+## Inference_Counts  -2.781e-07  1.628e-07  -1.708 0.087625 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 9.855 on 3986 degrees of freedom
+## Multiple R-squared:  0.1811, Adjusted R-squared:  0.1802 
+## F-statistic: 220.3 on 4 and 3986 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stargazer}\NormalTok{(lm.h.index.c10.infer, }\AttributeTok{type =} \StringTok{"text"}\NormalTok{, }\AttributeTok{out =} \StringTok{"lm.h.index.c10.infer.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## ===============================================
+##                         Dependent variable:    
+##                     ---------------------------
+##                               H.index          
+## -----------------------------------------------
+## Average_C10                  0.020***          
+##                               (0.003)          
+##                                                
+## Average_LogC10               2.862***          
+##                               (0.138)          
+##                                                
+## Inference_Sources            0.072***          
+##                               (0.020)          
+##                                                
+## Inference_Counts             -0.00000*         
+##                              (0.00000)         
+##                                                
+## Constant                      -0.410           
+##                               (0.510)          
+##                                                
+## -----------------------------------------------
+## Observations                   3,991           
+## R2                             0.181           
+## Adjusted R2                    0.180           
+## Residual Std. Error      9.855 (df = 3986)     
+## F Statistic          220.313*** (df = 4; 3986) 
+## ===============================================
+## Note:               *p<0.1; **p<0.05; ***p<0.01
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: While the predictors collectively have a significant effect on the response variable, the model explains only a modest amount of the variability for H.index.}
+
+\CommentTok{\#Full model with consideration for interaction terms}
+\NormalTok{lm.prod.full }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{.}\SpecialCharTok{\^{}}\DecValTok{2{-}1}\NormalTok{, }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\FunctionTok{summary}\NormalTok{(lm.prod.full)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ .^2 - 1, data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -49.389  -1.243  -0.490   0.853  21.698 
+## 
+## Coefficients:
+##                                      Estimate Std. Error t value Pr(>|t|)    
+## Productivity                        5.239e-02  5.548e-03   9.443  < 2e-16 ***
+## Average_C10                         7.411e-02  7.239e-03  10.237  < 2e-16 ***
+## Average_LogC10                      1.035e+00  1.431e-01   7.229 5.81e-13 ***
+## Inference_Sources                   1.768e-02  6.329e-03   2.794 0.005231 ** 
+## Inference_Counts                    1.044e-06  1.756e-06   0.595 0.552027    
+## P.gf.                               6.939e-01  3.935e-01   1.763 0.077893 .  
+## Productivity:Average_C10            1.494e-04  3.326e-05   4.493 7.24e-06 ***
+## Productivity:Average_LogC10         4.790e-02  1.847e-03  25.937  < 2e-16 ***
+## Productivity:Inference_Sources     -1.242e-03  1.678e-04  -7.399 1.66e-13 ***
+## Productivity:Inference_Counts       1.140e-08  1.392e-09   8.195 3.36e-16 ***
+## Productivity:P.gf.                  3.063e-02  2.962e-03  10.341  < 2e-16 ***
+## Average_C10:Average_LogC10         -1.526e-02  1.044e-03 -14.619  < 2e-16 ***
+## Average_C10:Inference_Sources      -1.862e-04  1.952e-04  -0.954 0.340195    
+## Average_C10:Inference_Counts        4.653e-09  1.379e-09   3.373 0.000750 ***
+## Average_C10:P.gf.                   2.021e-02  2.880e-03   7.015 2.69e-12 ***
+## Average_LogC10:Inference_Sources    1.883e-02  6.002e-03   3.137 0.001719 ** 
+## Average_LogC10:Inference_Counts    -2.341e-07  6.125e-08  -3.822 0.000134 ***
+## Average_LogC10:P.gf.               -8.394e-01  1.180e-01  -7.114 1.33e-12 ***
+## Inference_Sources:Inference_Counts -2.950e-08  5.289e-08  -0.558 0.577055    
+## Inference_Sources:P.gf.            -2.358e-02  1.596e-02  -1.477 0.139710    
+## Inference_Counts:P.gf.              1.017e-07  2.277e-07   0.447 0.655199    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.555 on 3970 degrees of freedom
+## Multiple R-squared:  0.9227, Adjusted R-squared:  0.9223 
+## F-statistic:  2258 on 21 and 3970 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stargazer}\NormalTok{(lm.prod.full, }\AttributeTok{type =} \StringTok{"text"}\NormalTok{, }\AttributeTok{out =} \StringTok{"lm.prod.full.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## ===============================================================
+##                                        Dependent variable:     
+##                                    ----------------------------
+##                                              H.index           
+## ---------------------------------------------------------------
+## Productivity                                 0.052***          
+##                                              (0.006)           
+##                                                                
+## Average_C10                                  0.074***          
+##                                              (0.007)           
+##                                                                
+## Average_LogC10                               1.035***          
+##                                              (0.143)           
+##                                                                
+## Inference_Sources                            0.018***          
+##                                              (0.006)           
+##                                                                
+## Inference_Counts                             0.00000           
+##                                             (0.00000)          
+##                                                                
+## P.gf.                                         0.694*           
+##                                              (0.393)           
+##                                                                
+## Productivity:Average_C10                    0.0001***          
+##                                             (0.00003)          
+##                                                                
+## Productivity:Average_LogC10                  0.048***          
+##                                              (0.002)           
+##                                                                
+## Productivity:Inference_Sources              -0.001***          
+##                                              (0.0002)          
+##                                                                
+## Productivity:Inference_Counts                0.000***          
+##                                              (0.000)           
+##                                                                
+## Productivity:P.gf.                           0.031***          
+##                                              (0.003)           
+##                                                                
+## Average_C10:Average_LogC10                  -0.015***          
+##                                              (0.001)           
+##                                                                
+## Average_C10:Inference_Sources                -0.0002           
+##                                              (0.0002)          
+##                                                                
+## Average_C10:Inference_Counts                 0.000***          
+##                                              (0.000)           
+##                                                                
+## Average_C10:P.gf.                            0.020***          
+##                                              (0.003)           
+##                                                                
+## Average_LogC10:Inference_Sources             0.019***          
+##                                              (0.006)           
+##                                                                
+## Average_LogC10:Inference_Counts            -0.00000***         
+##                                             (0.00000)          
+##                                                                
+## Average_LogC10:P.gf.                        -0.839***          
+##                                              (0.118)           
+##                                                                
+## Inference_Sources:Inference_Counts           -0.00000          
+##                                             (0.00000)          
+##                                                                
+## Inference_Sources:P.gf.                       -0.024           
+##                                              (0.016)           
+##                                                                
+## Inference_Counts:P.gf.                       0.00000           
+##                                             (0.00000)          
+##                                                                
+## ---------------------------------------------------------------
+## Observations                                  3,991            
+## R2                                            0.923            
+## Adjusted R2                                   0.922            
+## Residual Std. Error                     3.555 (df = 3970)      
+## F Statistic                        2,257.505*** (df = 21; 3970)
+## ===============================================================
+## Note:                               *p<0.1; **p<0.05; ***p<0.01
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: While a lot of the response variables are statistically significant and the model also explains a great variability, there are a few things to be noted. For instance, while P.gf. alone has a borderline statistical significance, in interaction terms with Productivity, it is highly significant and this comes as surprising as in the model "lm.prod.h.index", due to the negative correlation between the two, P.gf. does not have any significance at all. Due to this, we do further testing:}
+\NormalTok{lm.prod.full.sub }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Productivity }\SpecialCharTok{+}\NormalTok{ P.gf. }\SpecialCharTok{+}\NormalTok{ Productivity }\SpecialCharTok{*}\NormalTok{ P.gf. }\SpecialCharTok{+}\NormalTok{ Productivity }\SpecialCharTok{\^{}} \DecValTok{2} \SpecialCharTok{+}\NormalTok{ P.gf. }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{, }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\FunctionTok{summary}\NormalTok{(lm.prod.full.sub)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ Productivity + P.gf. + Productivity * 
+##     P.gf. + Productivity^2 + P.gf.^2, data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -57.001  -2.196  -1.144   1.220  42.807 
+## 
+## Coefficients:
+##                     Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)         2.443772   0.120936  20.207  < 2e-16 ***
+## Productivity        0.175025   0.001797  97.393  < 2e-16 ***
+## P.gf.              -0.500524   0.202915  -2.467   0.0137 *  
+## Productivity:P.gf.  0.033206   0.004104   8.091 7.79e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 5.144 on 3987 degrees of freedom
+## Multiple R-squared:  0.7768, Adjusted R-squared:  0.7766 
+## F-statistic:  4625 on 3 and 3987 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#When tested with these three variables by including squared and interaction term, all of the outcomes are statistically significant including the squared terms for P.gf. compared to model "lm.prod.h.index". Additionally, the model explains almost as 80 percent of the variability with H.index.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Diagnostics}
+\CommentTok{\#VIF testing}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{vif}\NormalTok{(lm.h.index))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Productivity       Average_C10    Average_LogC10 Inference_Sources 
+##          1.066610          1.404166          1.459449          1.259957 
+##  Inference_Counts             P.gf. 
+##          1.286424          1.047192
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: The VIF values indicate that there is generally little to moderate multicollinearity among the predictor variables for the original model.}
+
+\CommentTok{\#Normality test}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{shapiro.test}\NormalTok{(lm.h.index}\SpecialCharTok{$}\NormalTok{residuals))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Shapiro-Wilk normality test
+## 
+## data:  lm.h.index$residuals
+## W = 0.78048, p-value < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: We reject the null hypothesis that the residuals are normally distributed.}
+
+\CommentTok{\#Constant Variance assumption}
+\FunctionTok{plot}\NormalTok{(lm.h.index}\SpecialCharTok{$}\NormalTok{fitted.values, lm.h.index}\SpecialCharTok{$}\NormalTok{residuals)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{bptest}\NormalTok{(lm.h.index))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  studentized Breusch-Pagan test
+## 
+## data:  lm.h.index
+## BP = 1412, df = 6, p-value < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#We can reject the null hypothesis constant variance and assume that there is evidence of heteroscedasticity in the model output. The plotting of residuals and fitted values further confirm that there is hetereoskedascity. }
+
+\CommentTok{\#Large leverage points.}
+\NormalTok{X }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(lm.h.index)}
+\NormalTok{H }\OtherTok{\textless{}{-}}\NormalTok{ X}\SpecialCharTok{\%*\%}\FunctionTok{solve}\NormalTok{(}\FunctionTok{t}\NormalTok{(X)}\SpecialCharTok{\%*\%}\NormalTok{X)}\SpecialCharTok{\%*\%}\FunctionTok{t}\NormalTok{(X) }\CommentTok{\#Hat Values}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{diag}\NormalTok{(H))}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{2}\SpecialCharTok{*}\DecValTok{7}\SpecialCharTok{/}\DecValTok{5000}\NormalTok{,}\AttributeTok{col=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(}\FunctionTok{diag}\NormalTok{(H)), }\AttributeTok{y =} \FunctionTok{diag}\NormalTok{(H), }\AttributeTok{labels =} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(}\FunctionTok{diag}\NormalTok{(H)), }\AttributeTok{pos =} \DecValTok{2}\NormalTok{) }\CommentTok{\#Identification}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: The largest leverage point is the observation 3845.}
+
+\CommentTok{\#Influential Points}
+\NormalTok{cook.dist.prod }\OtherTok{\textless{}{-}} \FunctionTok{cooks.distance}\NormalTok{(lm.h.index)}
+\FunctionTok{halfnorm}\NormalTok{(cook.dist.prod,}\DecValTok{2}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Cook’s distances"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-6-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: Same goes for Cook\textquotesingle{}s distance as observation 3845 is the most influential point. }
+
+\CommentTok{\#Searching for outliers}
+\NormalTok{estar }\OtherTok{\textless{}{-}} \FunctionTok{rstudent}\NormalTok{(lm.h.index)}
+\FunctionTok{plot}\NormalTok{(lm.h.index}\SpecialCharTok{$}\NormalTok{fitted.values, estar, }\AttributeTok{xlab =} \StringTok{"Fitted values"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Studentized residuals"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h=}\DecValTok{2}\SpecialCharTok{*}\DecValTok{7}\SpecialCharTok{/}\DecValTok{5000}\NormalTok{,}\AttributeTok{col=}\DecValTok{1}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lm.h.index}\SpecialCharTok{$}\NormalTok{fitted.values, }\AttributeTok{y =}\NormalTok{ estar, }\AttributeTok{labels =} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(lm.h.index}\SpecialCharTok{$}\NormalTok{fitted.values), }\AttributeTok{pos =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-6-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: It seems the outliers is the observation 3441.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Model Sub setting}
+\FunctionTok{require}\NormalTok{(leaps)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: leaps
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{subset }\OtherTok{\textless{}{-}} \FunctionTok{regsubsets}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ df.clean.sub)}
+\NormalTok{rs }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(subset)}
+\FunctionTok{print}\NormalTok{(rs}\SpecialCharTok{$}\NormalTok{which)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   (Intercept) Productivity Average_C10 Average_LogC10 Inference_Sources
+## 1        TRUE         TRUE       FALSE          FALSE             FALSE
+## 2        TRUE         TRUE       FALSE           TRUE             FALSE
+## 3        TRUE         TRUE        TRUE           TRUE             FALSE
+## 4        TRUE         TRUE        TRUE           TRUE              TRUE
+## 5        TRUE         TRUE        TRUE           TRUE              TRUE
+## 6        TRUE         TRUE        TRUE           TRUE              TRUE
+##   Inference_Counts P.gf.
+## 1            FALSE FALSE
+## 2            FALSE FALSE
+## 3            FALSE FALSE
+## 4            FALSE FALSE
+## 5            FALSE  TRUE
+## 6             TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Choosing Model based on adjusted{-}r squared}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{which.max}\NormalTok{(rs}\SpecialCharTok{$}\NormalTok{adjr2))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{7}\NormalTok{,rs}\SpecialCharTok{$}\NormalTok{adjr2,}\AttributeTok{xlab=}\StringTok{"No. of Parameters"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Adjusted R{-}square"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: 5 variables explain up to 83.25929 percent whereas adding the sixth one only explains up to 83.25746.}
+
+\CommentTok{\#Choosing Model based on Cp criteria}
+\NormalTok{names }\OtherTok{\textless{}{-}} \FunctionTok{colnames}\NormalTok{(rs}\SpecialCharTok{$}\NormalTok{which)}
+\FunctionTok{plot}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{7}\NormalTok{, rs}\SpecialCharTok{$}\NormalTok{cp, }\AttributeTok{xlab=}\StringTok{"No. of Parameters"}\NormalTok{,}\AttributeTok{ylab=}\StringTok{"Cp Statistic"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{a =} \DecValTok{0}\NormalTok{, }\AttributeTok{b =} \DecValTok{1}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{7}\NormalTok{, rs}\SpecialCharTok{$}\NormalTok{cp, }\AttributeTok{labels =}\NormalTok{ names, }\AttributeTok{pos =} \DecValTok{4}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{cex =} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: 5 parameters explain with the Cp criteria. Thus, the selected subset model with 5 parameters does a good job of maintaining a balance between model complexity and explanatory powers.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Stepwise Regression using AIC as an identification}
+\NormalTok{stepwise.lm.h.index }\OtherTok{\textless{}{-}} \FunctionTok{stepAIC}\NormalTok{(lm.h.index)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Start:  AIC=11929.75
+## H.index ~ Productivity + Average_C10 + Average_LogC10 + Inference_Sources + 
+##     Inference_Counts + P.gf.
+## 
+##                     Df Sum of Sq    RSS   AIC
+## - Inference_Counts   1        11  79031 11928
+## - P.gf.              1        22  79041 11929
+## <none>                            79020 11930
+## - Inference_Sources  1       117  79137 11934
+## - Average_C10        1      1234  80254 11990
+## - Average_LogC10     1     14137  93157 12585
+## - Productivity       1    302162 381182 18208
+## 
+## Step:  AIC=11928.31
+## H.index ~ Productivity + Average_C10 + Average_LogC10 + Inference_Sources + 
+##     P.gf.
+## 
+##                     Df Sum of Sq    RSS   AIC
+## - P.gf.              1        28  79059 11928
+## <none>                            79031 11928
+## - Inference_Sources  1       187  79218 11936
+## - Average_C10        1      1238  80269 11988
+## - Average_LogC10     1     14235  93266 12587
+## - Productivity       1    302993 382023 18215
+## 
+## Step:  AIC=11927.72
+## H.index ~ Productivity + Average_C10 + Average_LogC10 + Inference_Sources
+## 
+##                     Df Sum of Sq    RSS   AIC
+## <none>                            79059 11928
+## - Inference_Sources  1       190  79249 11935
+## - Average_C10        1      1242  80301 11988
+## - Average_LogC10     1     14213  93272 12586
+## - Productivity       1    308323 387382 18268
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(stepwise.lm.h.index)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = H.index ~ Productivity + Average_C10 + Average_LogC10 + 
+##     Inference_Sources, data = df.clean.sub)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -42.903  -1.491   0.112   0.805  51.198 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       -1.273318   0.221667  -5.744 9.92e-09 ***
+## Productivity       0.171138   0.001373 124.680  < 2e-16 ***
+## Average_C10        0.011400   0.001440   7.914 3.20e-15 ***
+## Average_LogC10     1.690772   0.063161  26.769  < 2e-16 ***
+## Inference_Sources  0.025504   0.008236   3.097  0.00197 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 4.454 on 3986 degrees of freedom
+## Multiple R-squared:  0.8327, Adjusted R-squared:  0.8326 
+## F-statistic:  4961 on 4 and 3986 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: The lowest AIC value is 11927.72. The variables are Productivity, Average\_C10, Average\_LogC10, and Inference\_Sources. However, it should be noted that the original model with all variables have an AIC of 11927.75; this indicates that the reduced model, despite having fewer variables, provides a similar level of fit to the data compared to the original model.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Ridge regression}
+\NormalTok{df.clean.sub.scaled }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\FunctionTok{scale}\NormalTok{(df.clean.sub))}
+\NormalTok{lm.h.index.ridge }\OtherTok{\textless{}{-}} \FunctionTok{lm.ridge}\NormalTok{(H.index }\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{data =}\NormalTok{ df.clean.sub.scaled, }\AttributeTok{lambda=}\FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{4000}\NormalTok{,.}\DecValTok{01}\NormalTok{))}
+\CommentTok{\#Choosing GCV based on maximum and minimum values}
+\NormalTok{GCV.lambda }\OtherTok{\textless{}{-}} \FunctionTok{which.min}\NormalTok{(lm.h.index.ridge}\SpecialCharTok{$}\NormalTok{GCV)}
+\FunctionTok{print}\NormalTok{(lm.h.index.ridge}\SpecialCharTok{$}\NormalTok{lambda[GCV.lambda])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Plotting}
+\FunctionTok{matplot}\NormalTok{(lm.h.index.ridge}\SpecialCharTok{$}\NormalTok{lambda, }\FunctionTok{coef}\NormalTok{(lm.h.index.ridge), }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{xlab =} \FunctionTok{expression}\NormalTok{(lambda), }\AttributeTok{ylab =} \FunctionTok{expression}\NormalTok{(}\FunctionTok{hat}\NormalTok{(beta)), }\AttributeTok{col =} \DecValTok{1}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v =}\NormalTok{ lm.h.index.ridge}\SpecialCharTok{$}\NormalTok{lambda[GCV.lambda], }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: The optimal lambada here is 1.8. This small lambada value means that the model fit the data more closely.}
+
+\CommentTok{\#Running ridge regression based on lambda value of 1.8}
+\FunctionTok{select}\NormalTok{(lm.h.index.ridge)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## modified HKB estimator is 0.9182103 
+## modified L-W estimator is 0.8043325 
+## smallest value of GCV  at 1.8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lm.h.index.ridge }\OtherTok{\textless{}{-}} \FunctionTok{lm.ridge}\NormalTok{(H.index}\SpecialCharTok{\textasciitilde{}}\NormalTok{.,}\AttributeTok{lambda=}\FloatTok{1.8}\NormalTok{,df.clean.sub.scaled)}
+\FunctionTok{coef}\NormalTok{(lm.h.index.ridge)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                        Productivity       Average_C10    Average_LogC10 
+##      5.523934e-17      8.253552e-01      6.059364e-02      2.088798e-01 
+## Inference_Sources  Inference_Counts             P.gf. 
+##      1.770234e-02      5.504902e-03     -6.958837e-03
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\FunctionTok{coef}\NormalTok{(lm.h.index.ridge),}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                        Productivity       Average_C10    Average_LogC10 
+##            0.0000            0.8254            0.0606            0.2089 
+## Inference_Sources  Inference_Counts             P.gf. 
+##            0.0177            0.0055           -0.0070
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: Modified HKB estimator is 0.9182103 and modified L{-}W estimator is 0.8043325. }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Fitting Non negative Garrote using GCV}
+\NormalTok{scaled.df.clean.sub }\OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(}\FunctionTok{as.matrix}\NormalTok{(df.clean.sub))}
+\NormalTok{X }\OtherTok{\textless{}{-}}\NormalTok{ scaled.df.clean.sub[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ scaled.df.clean.sub[,}\DecValTok{1}\NormalTok{]}
+\NormalTok{a.cv }\OtherTok{\textless{}{-}} \FunctionTok{cv.nnGarrote}\NormalTok{(}\AttributeTok{x=}\NormalTok{X,}\AttributeTok{y=}\NormalTok{y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Performing cross-validation for 101 values of the shrinkage parameter "lambda.nng":
+##  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79 | 80 | 81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89 | 90 | 91 | 92 | 93 | 94 | 95 | 96 | 97 | 98 | 99 | 100 | 101 |
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{outcome }\OtherTok{\textless{}{-}} \FunctionTok{nnGarrote}\NormalTok{(}\AttributeTok{x=}\NormalTok{X,}\AttributeTok{y=}\NormalTok{y,}\AttributeTok{lambda.nng =}\NormalTok{ a.cv}\SpecialCharTok{$}\NormalTok{optimal.lambda.nng)}
+\NormalTok{names.garrote }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"(Intercept)"}\NormalTok{, }\FunctionTok{colnames}\NormalTok{(X))}
+\NormalTok{name.df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Parameter =}\NormalTok{ names.garrote, }\AttributeTok{Coefficient =} \FunctionTok{c}\NormalTok{(outcome}\SpecialCharTok{$}\NormalTok{betas[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], outcome}\SpecialCharTok{$}\NormalTok{betas[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{]))}
+\FunctionTok{print}\NormalTok{(name.df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           Parameter   Coefficient
+## 1       (Intercept)  5.511187e-17
+## 2      Productivity  8.256694e-01
+## 3       Average_C10  6.049699e-02
+## 4    Average_LogC10  2.088836e-01
+## 5 Inference_Sources  1.761974e-02
+## 6  Inference_Counts  5.479097e-03
+## 7             P.gf. -6.843552e-03
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: Except for variables Interence\_Counts and P.gf., the rest of the variables have an non{-}zero impact on the predicted value of the response variable, as indicated by their non{-}zero coefficients in the fitted model.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Lasso Regression using Cp criteria}
+\NormalTok{y}\FloatTok{.2} \OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(df.clean.sub}\SpecialCharTok{$}\NormalTok{H.index)}
+\NormalTok{x}\FloatTok{.2} \OtherTok{\textless{}{-}} \FunctionTok{as.matrix}\NormalTok{(}\FunctionTok{scale}\NormalTok{(df.clean.sub[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{7}\NormalTok{]))}
+\NormalTok{a.lasso }\OtherTok{\textless{}{-}} \FunctionTok{lars}\NormalTok{(x}\FloatTok{.2}\NormalTok{,y}\FloatTok{.2}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(a.lasso)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## LARS/LASSO
+## Call: lars(x = x.2, y = y.2)
+##   Df    Rss        Cp
+## 0  1 3990.0 19842.513
+## 1  2 1247.9  3466.276
+## 2  3  745.4   466.984
+## 3  4  673.2    37.886
+## 4  5  668.5    11.682
+## 5  6  668.0    10.725
+## 6  7  667.0     7.000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{names.lasso }\OtherTok{\textless{}{-}} \FunctionTok{colnames}\NormalTok{(x}\FloatTok{.2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{,a.lasso}\SpecialCharTok{$}\NormalTok{Cp)}
+\FunctionTok{abline}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{7}\NormalTok{, a.lasso}\SpecialCharTok{$}\NormalTok{cp, }\AttributeTok{labels =}\NormalTok{ names.lasso, }\AttributeTok{pos =} \DecValTok{3}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{cex =} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project-7401_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: Overall, the model demonstrates good performance in terms of model fit, predictor selection, and optimal model complexity. It also explains the observed data well.}
+
+\CommentTok{\#Lasso with glmnet}
+\NormalTok{a.lasso }\OtherTok{\textless{}{-}} \FunctionTok{glmnet}\NormalTok{(x}\FloatTok{.2}\NormalTok{,y}\FloatTok{.2}\NormalTok{,}\AttributeTok{family=}\StringTok{"gaussian"}\NormalTok{)}
+\NormalTok{a.cv }\OtherTok{\textless{}{-}} \FunctionTok{cv.glmnet}\NormalTok{(x}\FloatTok{.2}\NormalTok{,y}\FloatTok{.2}\NormalTok{,}\AttributeTok{family=}\StringTok{"gaussian"}\NormalTok{,}\AttributeTok{nfolds=}\DecValTok{5000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Option grouped=FALSE enforced in cv.glmnet, since < 3 observations per
+## fold
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a.cv}\SpecialCharTok{$}\NormalTok{lambda.min}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.003309913
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\FunctionTok{coef}\NormalTok{(a.lasso,}\AttributeTok{s=}\NormalTok{a.cv}\SpecialCharTok{$}\NormalTok{lambda.min),}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 7 x 1 sparse Matrix of class "dgCMatrix"
+##                         s1
+## (Intercept)        0.00000
+## Productivity       0.82345
+## Average_C10        0.05859
+## Average_LogC10     0.20745
+## Inference_Sources  0.01561
+## Inference_Counts   0.00386
+## P.gf.             -0.00407
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Interpretation: The optimal lambda here is 0.003309913. The coefficients show that apart from P.gf., the rest are positively associated with the H.index.}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
